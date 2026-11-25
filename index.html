@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e9">
+  <meta name="description" content="A living archive of time and memory in organic monthly ring formations.">
+  <title>Ring Atlas · 2026–2027</title>
+  <link rel="stylesheet" href="./style.css?v=2027-5">
+  <script src="./script.js?v=2027-5" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="brand">
+        <h1>Ring Atlas</h1>
+        <span>A LIVING ARCHIVE</span>
+      </div>
+      <nav class="views" aria-label="View">
+        <button id="month-view" class="view-button active" type="button" aria-pressed="true">Month</button>
+        <button id="year-view" class="view-button" type="button" aria-pressed="false">Year Overview</button>
+      </nav>
+    </header>
+    <main id="main">
+      <div class="heading-row">
+        <div class="heading-title">
+          <h2 id="view-title">November <em>2026</em></h2>
+          <div id="period-navigation" class="period-navigation" role="group" aria-label="Browse months">
+            <button id="previous-period" type="button" aria-label="Previous month">‹</button>
+            <button id="next-period" type="button" aria-label="Next month">›</button>
+          </div>
+        </div>
+        <p class="heading-note" id="view-note">One pale ring for each day. Memories settle in blue.</p>
+      </div>
+      <div id="month-layout" class="month-layout">
+        <aside id="calendar-panel" class="calendar-panel" aria-label="Month calendar">
+          <p class="eyebrow">SELECT A DAY</p>
+          <div class="calendar-weekdays" aria-hidden="true">
+            <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+          </div>
+          <div id="calendar-days" class="calendar-days" role="group" aria-label="Days of the month"></div>
+          <p class="calendar-key">Blue dates hold a mark</p>
+        </aside>
+        <div class="formation-column">
+          <section id="stage" class="stage" aria-label="Interactive ring formations">
+            <canvas id="atlas" aria-label="Daily tree rings; hover a ring to highlight it and click to select its date"></canvas>
+            <div id="month-buttons" class="month-buttons" aria-label="Select a month"></div>
+          </section>
+          <div class="canvas-footer">
+            <span id="interaction-hint">Hover a day ring to darken it · Click to select its date</span>
+            <button id="replay" type="button">Replay growth</button>
+          </div>
+        </div>
+        <aside id="entry-section" class="entry-section" aria-labelledby="entry-heading">
+          <p class="eyebrow">EMOTIONAL DIARY</p>
+          <h2 id="selected-date-heading" class="selected-date-heading" aria-label="November 24, 2026">Tuesday, 24</h2>
+          <div id="card-entries" class="diary-entries"></div>
+          <div class="form-intro">
+            <p class="eyebrow">A MARK IN TIME</p>
+            <h2 id="entry-heading">Leave Your Mark</h2>
+            <p>One day, one changing line.</p>
+          </div>
+          <form id="entry-form">
+            <input id="entry-date" type="hidden" value="2026-11-24">
+            <label class="field feeling-field">
+              <span>Feeling</span>
+              <select id="entry-feeling" required>
+                <option value="" disabled selected>Choose a feeling</option>
+                <option>Calm</option>
+                <option>Hopeful</option>
+                <option>Restless</option>
+                <option>Tender</option>
+                <option>Heavy</option>
+                <option>Energized</option>
+                <option>Something else</option>
+              </select>
+            </label>
+            <label id="other-field" class="field other-field" hidden>
+              <span>In your words</span>
+              <input id="entry-other" type="text" maxlength="28" placeholder="Name the feeling">
+            </label>
+            <label class="field thought-field">
+              <span>A thought <small>optional</small></span>
+              <textarea id="entry-thought" maxlength="180" rows="3" placeholder="What would you like to remember?"></textarea>
+            </label>
+            <button id="save-button" class="save-button" type="submit">Settle mark</button>
+          </form>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          <details id="entries-panel" class="entries-panel">
+            <summary>
+              <span>Marked days <b id="entry-count">0</b></span>
+              <span class="summary-action">Show days</span>
+            </summary>
+            <div id="entries-list" class="entries-list"></div>
+            <button id="export" type="button" class="export-button">Export entries as JSON</button>
+          </details>
+        </aside>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <span>AN EXPERIMENT IN ACCUMULATION</span>
+      <span class="footer-links"><button id="about" type="button">About</button><span>Stored in this browser</span></span>
+    </footer>
+  </div>
+  <dialog id="intro-dialog" class="intro-dialog" aria-labelledby="intro-title" aria-describedby="intro-copy">
+    <div class="intro-inner">
+      <p class="eyebrow">A LIVING ARCHIVE</p>
+      <h2 id="intro-title">Ring Atlas</h2>
+      <p id="intro-copy" class="intro-copy">As trees hold time in their rings, we hold memories in our days. Leave a mark, and watch your year take shape.</p>
+      <button id="intro-begin" class="intro-begin" type="button">Begin</button>
+    </div>
+  </dialog>
+</body>
+</html>
